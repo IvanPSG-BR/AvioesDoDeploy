@@ -1,0 +1,64 @@
+---
+const team = [
+  {
+    name: 'Ivan PSG',
+    role: 'Backend & Infra',
+    bio: 'Cria APIs, conecta bancos de dados e gerencia o deploy.',
+    avatar: 'https://avatar.vercel.sh/ivan?size=80',
+    accent: 'border-yellow-400',
+  },
+  {
+    name: 'Guilherme O.',
+    role: 'Frontend',
+    bio: 'Transforma telas em interfaces acessíveis e performáticas.',
+    avatar: 'https://avatar.vercel.sh/frontend?size=80',
+    accent: 'border-cyan-400',
+  },
+  {
+    name: 'Pedro Lucas',
+    role: 'Dados & BI',
+    bio: 'Transforma dados brutos em insights acionáveis.',
+    avatar: 'https://avatar.vercel.sh/data?size=80',
+    accent: 'border-yellow-400',
+  },
+  {
+    name: 'Eduardo Silva e Silva',
+    role: 'Design & UX',
+    bio: 'Garante que tudo seja bonito, claro e acessível.',
+    avatar: 'https://avatar.vercel.sh/designer?size=80',
+    accent: 'border-cyan-400',
+  },
+];
+---
+
+<section id="time" class="bg-slate-50 dark:bg-slate-900 py-14 sm:py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10 sm:mb-12">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-slate-50">Núcleo do time</h2>
+      <p class="mt-3 text-slate-500 dark:text-slate-400 max-w-md mx-auto text-sm sm:text-base">
+        Quatro pessoas, diversas especialidades, um objetivo: construir projetos que importam.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+      {team.map(({ name, role, bio, avatar, accent }) => (
+        <article class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 sm:p-6 flex flex-col items-center text-center gap-3 hover:shadow-md transition-shadow">
+          <img
+            src={avatar}
+            alt={`Avatar de ${name}`}
+            width="80"
+            height="80"
+            class={`rounded-full w-16 h-16 sm:w-20 sm:h-20 object-cover border-2 ${accent}`}
+            loading="lazy"
+          />
+          <div>
+            <p class="font-semibold text-slate-900 dark:text-slate-50 text-sm leading-snug">{name}</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-mono-highlight">{role}</p>
+          </div>
+          <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">{bio}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+

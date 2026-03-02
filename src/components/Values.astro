@@ -1,0 +1,57 @@
+---
+const values = [
+  {
+    icon: 'bi-lightbulb',
+    title: 'Aprendizado Prático',
+    description: 'Aprender fazendo é a única forma real de evoluir. Erramos rápido, iteramos mais rápido ainda e documentamos o caminho para quem vem depois.',
+    accent: 'bg-yellow-400',
+    iconColor: 'text-yellow-500',
+    iconBg: 'bg-yellow-50',
+    iconBgDark: 'dark:bg-yellow-900/20',
+  },
+  {
+    icon: 'bi-lightning-charge',
+    title: 'Rápido e Leve',
+    description: "Filosofia Quickn'Lite: soluções simples, eficientes e sem inchaço tecnológico. Nada de over-engineering — faça funcionar, depois refine.",
+    accent: 'bg-cyan-400',
+    iconColor: 'text-cyan-500',
+    iconBg: 'bg-cyan-50',
+    iconBgDark: 'dark:bg-cyan-900/20',
+  },
+  {
+    icon: 'bi-people',
+    title: 'Comunidade Semi-Autônoma',
+    description: 'Ramos que trabalham de forma independente, guiados por um núcleo comum. Colaboração aberta, transparência na documentação e foco em inclusão.',
+    accent: 'bg-slate-400',
+    iconColor: 'text-slate-900',
+    iconBg: 'bg-slate-100',
+    iconBgDark: 'dark:bg-slate-700',
+  },
+];
+---
+
+<section id="valores" class="bg-slate-50 dark:bg-slate-900 py-14 sm:py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10 sm:mb-12">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-slate-50">Nossos valores</h2>
+      <p class="mt-3 text-slate-500 dark:text-slate-400 max-w-md mx-auto text-sm sm:text-base">
+        Três princípios que guiam tudo o que construímos e como nos relacionamos.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      {values.map(({ icon, title, description, accent, iconColor, iconBg, iconBgDark }) => (
+        <article class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class={`w-10 h-10 rounded-lg flex items-center justify-center ${iconBg} ${iconBgDark}`}>
+            <i class={`bi ${icon} text-lg ${iconColor}`} aria-hidden="true"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-900 dark:text-slate-50 text-base mb-2">{title}</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{description}</p>
+          </div>
+          <div class={`mt-auto h-1 w-10 rounded-full ${accent}`} aria-hidden="true" />
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+

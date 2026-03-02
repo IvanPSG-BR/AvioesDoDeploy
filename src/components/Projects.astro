@@ -1,0 +1,67 @@
+---
+const projects = [
+  {
+    title: 'Deploy Tracker [placeholder]',
+    description: 'Dashboard para monitorar o status de deploys em tempo real. Integra com GitHub Actions e notifica a equipe no Discord.',
+    tags: ['React', 'Node.js', 'WebSocket'],
+    repo: 'https://github.com/avioes-do-deploy/deploy-tracker',
+  },
+  {
+    title: "Quickn'Lite CLI [placeholder]",
+    description: 'Ferramenta de linha de comando para scaffolding de projetos seguindo a filosofia minimalista da comunidade.',
+    tags: ['TypeScript', 'CLI', 'Tooling'],
+    repo: 'https://github.com/avioes-do-deploy/quicknlite-cli',
+  },
+  {
+    title: 'Data Board [placeholder]',
+    description: 'Painel de visualização de dados abertos. Nasceu no hackathon da SEMCOMP25 e virou projeto permanente.',
+    tags: ['Python', 'Pandas', 'Astro'],
+    repo: 'https://github.com/avioes-do-deploy/data-board',
+  },
+];
+---
+
+<section id="projetos" class="bg-white dark:bg-slate-950 py-14 sm:py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10 sm:mb-12">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-slate-50">Projetos em destaque [WIP]</h2>
+      <p class="mt-3 text-slate-500 dark:text-slate-400 max-w-md mx-auto text-sm sm:text-base">
+        Do hackathon para o mundo real. Veja o que estamos construindo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      {projects.map(({ title, description, tags, repo }) => (
+        <article class="group bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 flex flex-col gap-4 hover:border-yellow-400 dark:hover:border-yellow-400 hover:shadow-md transition-all">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-semibold text-slate-900 dark:text-slate-50 text-base leading-tight">{title}</h3>
+            <a href={repo} target="_blank" rel="noopener noreferrer"
+              aria-label={`Repositório de ${title}`}
+              class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors flex-shrink-0">
+              <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-1">{description}</p>
+          <div class="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-mono-highlight">{tag}</span>
+            ))}
+          </div>
+          <a href={repo} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors mt-auto">
+            <i class="bi bi-github" aria-hidden="true"></i>
+            Ver repositório
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="https://github.com/avioes-do-deploy" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium text-sm hover:border-slate-400 dark:hover:border-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+        <i class="bi bi-github" aria-hidden="true"></i>
+        Ver todos no GitHub
+      </a>
+    </div>
+  </div>
+</section>

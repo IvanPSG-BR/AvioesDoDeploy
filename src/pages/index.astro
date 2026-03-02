@@ -1,0 +1,66 @@
+---
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Values from '../components/Values.astro';
+import Projects from '../components/Projects.astro';
+import TeamGrid from '../components/TeamGrid.astro';
+import HowToJoin from '../components/HowToJoin.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const title = 'Aviões do Deploy — De eventos para projetos reais';
+const description =
+  'Time pequeno, ideias grandes. Aprenda fazendo com a comunidade Aviões do Deploy: hackathons, projetos reais e aprendizado prático.';
+const url = 'https://avioesdodeploy.dev';
+const image = `${url}/og.png`;
+---
+
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Aviões do Deploy" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <title>{title}</title>
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <!-- Tailwind Play CDN -->
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>tailwind.config = { darkMode: 'class' }</script>
+  </head>
+  <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50">
+    <Header />
+    <main>
+      <Hero />
+      <Values />
+      <Projects />
+      <TeamGrid />
+      <HowToJoin />
+    </main>
+    <Footer />
+  </body>
+</html>
+

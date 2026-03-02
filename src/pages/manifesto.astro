@@ -1,0 +1,174 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const title = 'Manifesto — Aviões do Deploy';
+const description =
+  'Os quatro princípios que guiam tudo o que a comunidade Aviões do Deploy constrói e como se relaciona.';
+---
+
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Aviões do Deploy" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <!-- Tailwind Play CDN -->
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>tailwind.config = { darkMode: 'class' }</script>
+  </head>
+  <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50">
+    <Header />
+    <main class="max-w-2xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <!-- Eyebrow -->
+      <p class="text-xs font-semibold uppercase tracking-widest text-yellow-500 font-mono-highlight mb-4">
+        Manifesto
+      </p>
+
+      <h1 class="text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-slate-50 leading-tight mb-4">
+        O que nos move
+      </h1>
+      <p class="text-slate-500 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
+        Cinco princípios simples. Tudo o que fazemos parte deles.
+      </p>
+
+      <div class="space-y-8 sm:space-y-10">
+        <!-- Principle 1 -->
+        <article class="border-l-4 border-yellow-400 pl-5 sm:pl-6">
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">
+            I. Aprendizado prático em primeiro lugar
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Errar cedo para consertar cedo. Teoria sem prática não chega a lugar nenhum.
+            Na comunidade, a expectativa é que cada projeto, evento ou discussão deixe uma lição
+            concreta — e que essa lição seja documentada para quem vem depois.
+          </p>
+        </article>
+
+        <!-- Principle 2 -->
+        <article class="border-l-4 border-slate-300 dark:border-slate-600 pl-5 sm:pl-6">
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">
+            II. Objetivo e Intenção
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Tudo deve ter um propósito claro, e isso inclui o desenvolvimento de software. Não se trata apenas de "fazer algo funcionar",
+            mas de entender o porquê de cada decisão técnica e não-técnica. O aprendizado é mais profundo quando há uma intenção clara,
+            e isso guia a evolução dos projetos e da comunidade como um todo.
+          </p>
+        </article>
+
+        <!-- Principle 3 -->
+        <article class="border-l-4 border-cyan-400 pl-5 sm:pl-6">
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">
+            III. Minimalismo técnico
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Soluções simples, eficientes e leves. O IvanPSG chama de{' '}
+            <strong class="font-mono-highlight text-slate-800 dark:text-slate-200">Quickn'Lite</strong> a filosofia de, dentre outras coisas,
+            entregar algo que funciona antes de "over-engineerizar". Menos dependências, menos débito
+            técnico, mais clareza. Se complica só quando precisa.
+          </p>
+        </article>
+
+        <!-- Principle 4 -->
+        <article class="border-l-4 border-slate-300 dark:border-slate-600 pl-5 sm:pl-6">
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">
+            IV. Comunidade aberta e semi-autônoma
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Cada ramo — equipe formulada por devs que se juntarem — opera com autonomia real: define seu prório ritmo,
+            projetos e rotinas. Mas todos se alinham ao núcleo em valores,
+            eventos e objetivos maiores. Colaboração sem burocracia.
+          </p>
+        </article>
+
+        <!-- Principle 5 -->
+        <article class="border-l-4 border-yellow-400 pl-5 sm:pl-6">
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">
+            V. Transparência e inclusão
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Documentação clara é respeito com quem vai ler depois. Decisões abertas. Acessibilidade
+            não é detalhe, é requisito. Qualquer pessoa com vontade de aprender e contribuir é
+            bem-vinda — independente de nível, área ou background.
+          </p>
+        </article>
+      </div>
+
+      <!-- Origin -->
+      <section class="mt-12 sm:mt-16 bg-slate-50 dark:bg-slate-800 rounded-xl p-5 sm:p-8 border border-slate-200 dark:border-slate-700">
+        <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4">Nossa origem</h2>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+          A equipe nasceu na Semana de Computação da UFBA (SEMCOMP25). Entre atrasos, fome e
+          descobertas sobre o uso de IA em competições, quatro pessoas decidiram que valeria a pena
+          crescer além do evento.
+        </p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+          O nome veio de múltiplas camadas: viemos do aeroporto, tem a referência cultural da banda (Aviões do Forró)
+          e <span class="font-semibold text-slate-800 dark:text-slate-200">deploy</span> remete tanto a <em>decolar</em>{' '}
+          quanto ao ato de publicar software — colocar algo no mundo de verdade.
+        </p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          O objetivo inicial era competir em maratonas e hackathons. Agora é maior: expandir a
+          equipe, produzir projetos reais e, quem sabe, evoluir para serviços e empresa no futuro.
+        </p>
+      </section>
+
+      <!-- PDF Preview -->
+      <section class="mt-12 sm:mt-16">
+        <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4">Manifesto completo</h2>
+        <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+          <iframe
+            src="/manifesto.pdf#zoom=67&pagemode=none"
+            class="w-full h-[500px] sm:h-[720px]"
+            title="Manifesto Aviões do Deploy"
+          >
+            <p class="p-4 text-slate-600 dark:text-slate-400">
+              Seu navegador não suporta visualização de PDF.
+              <a href="/manifesto.pdf" download class="text-yellow-500 underline">Baixe o documento aqui</a>.
+            </p>
+          </iframe>
+        </div>
+        <div class="mt-3 flex justify-end">
+          <a
+            href="/manifesto.pdf"
+            download
+            class="inline-flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-colors"
+          >
+            <i class="bi bi-download"></i>
+            Baixar PDF
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="mt-10 sm:mt-12 text-center">
+        <a
+          href="https://discord.gg/Pbmssyrv"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-yellow-400 text-slate-900 font-semibold hover:bg-yellow-300 transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
+        >
+          Junte-se à comunidade ✈
+        </a>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
