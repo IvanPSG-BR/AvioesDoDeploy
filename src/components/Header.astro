@@ -1,11 +1,14 @@
 ---
+const currentPath = Astro.url.pathname;
+const isManifesto = currentPath.includes('/manifesto');
+const basePath = isManifesto ? '../' : './';
 ---
 
 <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur border-b border-slate-100 dark:border-slate-800">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-4">
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-50 hover:opacity-80 transition-opacity shrink-0">
-      <img src="/favicon.webp" alt="Logo Aviões do Deploy" class="w-8 h-8 object-contain rounded-full" />
+    <a href={basePath} class="flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-50 hover:opacity-80 transition-opacity shrink-0">
+      <img src={`${basePath}favicon.webp`} alt="Logo Aviões do Deploy" class="w-8 h-8 object-contain rounded-full" />
       <span class="text-sm sm:text-base">Aviões do Deploy</span>
     </a>
 
@@ -13,19 +16,19 @@
     <nav aria-label="Navegação principal" class="hidden md:block">
       <ul class="flex items-center gap-5 text-sm font-medium">
         <li>
-          <a href="/#valores" class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Valores</a>
+          <a href={`${basePath}#valores`} class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Valores</a>
         </li>
         <li>
-          <a href="/#projetos" class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Projetos</a>
+          <a href={`${basePath}#projetos`} class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Projetos</a>
         </li>
         <li>
-          <a href="/#time" class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Núcleo</a>
+          <a href={`${basePath}#time`} class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Núcleo</a>
         </li>
         <li>
-          <a href="/#como-participar" class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Participe!</a>
+          <a href={`${basePath}#como-participar`} class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Participe!</a>
         </li>
         <li>
-          <a href="/manifesto" class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Manifesto</a>
+          <a href={`${basePath}manifesto`} class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Manifesto</a>
         </li>
         <li>
           <a
@@ -80,19 +83,19 @@
     <nav aria-label="Navegação mobile">
       <ul class="flex flex-col px-4 py-3 gap-1 text-sm font-medium">
         <li>
-          <a href="/#valores" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Valores</a>
+          <a href={`${basePath}#valores`} class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Valores</a>
         </li>
         <li>
-          <a href="/#projetos" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Projetos</a>
+          <a href={`${basePath}#projetos`} class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Projetos</a>
         </li>
         <li>
-          <a href="/#time" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Núcleo</a>
+          <a href={`${basePath}#time`} class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Núcleo</a>
         </li>
         <li>
-          <a href="/#como-participar" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Participe!</a>
+          <a href={`${basePath}#como-participar`} class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Participe!</a>
         </li>
         <li>
-          <a href="/manifesto" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Manifesto</a>
+          <a href={`${basePath}manifesto`} class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Manifesto</a>
         </li>
         <li class="pt-1 pb-2">
           <a

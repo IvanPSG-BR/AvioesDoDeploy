@@ -1,5 +1,8 @@
 ---
 const year = new Date().getFullYear();
+const currentPath = Astro.url.pathname;
+const isManifesto = currentPath.includes('/manifesto');
+const basePath = isManifesto ? '../' : './';
 ---
 
 <footer class="border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 py-10 sm:py-12">
@@ -7,8 +10,8 @@ const year = new Date().getFullYear();
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8 sm:mb-10">
       <!-- Brand -->
       <div>
-        <a href="/" class="flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-50 mb-3">
-          <img src="/favicon.webp" alt="Logo Aviões do Deploy" class="w-6 h-6 object-contain rounded-full" />
+        <a href={basePath} class="flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-50 mb-3">
+          <img src={`${basePath}favicon.webp`} alt="Logo Aviões do Deploy" class="w-6 h-6 object-contain rounded-full" />
           Aviões do Deploy
         </a>
         <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -20,10 +23,10 @@ const year = new Date().getFullYear();
       <div>
         <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50 mb-3">Links úteis</h3>
         <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-          <li><a href="/" class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Início</a></li>
-          <li><a href="/manifesto" class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Manifesto</a></li>
-          <li><a href="/#projetos" class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Projetos</a></li>
-          <li><a href="/#como-participar" class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Como participar</a></li>
+          <li><a href={basePath} class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Início</a></li>
+          <li><a href={`${basePath}manifesto`} class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Manifesto</a></li>
+          <li><a href={`${basePath}#projetos`} class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Projetos</a></li>
+          <li><a href="#como-participar" class="hover:text-slate-900 dark:hover:text-slate-100 transition-colors">Como participar</a></li>
         </ul>
       </div>
 
